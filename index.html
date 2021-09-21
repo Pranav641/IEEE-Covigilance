@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Covid Relief using Automation</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<style>
+		*
+		{
+			margin: 0px;
+			padding: 0px;
+		}
+		body
+		{
+			background: url('https://img.freepik.com/free-photo/empty-classroom-education-university_78895-95.jpg?size=626&ext=jpg') no-repeat;
+			background-size: cover;
+			background-position: center;
+			background-attachment: fixed;
+		}
+		.heading
+		{
+			height: 15vh;
+			background-color: lightgrey;
+		}
+		@media (max-width: 632px)
+		{
+			body
+			{
+				background-size: 100vh 120vh;
+			}
+			.heading
+			{
+				height: 18vh;
+			}
+		}
+		.heading h1
+		{
+			padding-top: 20px;
+			text-align: center;
+			font-size: 48px;
+			text-decoration: underline;
+		}
+		@media (max-width: 632px)
+		{
+			.heading h1
+			{
+				font-size: 40px;
+			}
+		}
+		.collapse
+		{
+			display: flex;
+			justify-content: center;
+			height: 3rem;
+			width: 25vh;
+			font-size: 24px;
+			font-weight: bold;
+			margin: 5px auto;
+			padding: 12px;
+			border:0px;
+			background-color: #2D46B9;
+			border-radius: 30px;
+
+		}
+		.collapse:nth-child(1)
+		{
+			margin-top: 22vh;
+		}
+		.collapse.active,.collapse:hover
+		{
+			background-color: #3DB2FF;
+		}
+
+		.content
+		{
+		  padding: 0 18px;
+		  display: none;
+		  overflow: hidden;
+		  text-align: center;
+		}
+		.content button
+		{
+			height: 3rem;
+			width: 20vh;
+			font-size: 1rem;
+			font-weight: bold;
+			margin: 1vw;
+			padding: 12px;
+			border:0px;			
+			border-radius: 30px;
+		}
+		.content button:nth-child(1),.content button:nth-child(4)
+		{
+			background-color: #6ECB63;
+		}
+		.content button:nth-child(2),.content button:nth-child(5)
+		{
+			background-color: #FF2626;
+		}
+		.content button:hover
+		{
+			background-color: #FFE459;
+		}
+	</style>
+</head>
+<body>
+	<div class="heading">
+		<h1>Covid Relief using Automation</h1>
+	</div>
+	<div>
+		<button class="collapse">FAN</button>
+		<div class="content">
+			<button>FAN-1 ON</button>
+			<button>FAN-1 OFF</button> <br>
+			<button>FAN-2 ON</button>
+			<button>FAN-2 OFF</button>
+		</div><br>
+		<button class="collapse">LIGHT</button>
+		<div class="content">
+			<button>LIGHT-1 ON</button>
+			<button>LIGHT-1 OFF</button> <br>
+			<button>LIGHT-2 ON</button>
+			<button>LIGHT-2 OFF</button>
+		</div><br>
+		<button class="collapse">WINDOW</button>
+		<div class="content">
+			<button>WINDOW-1 OPEN</button>
+			<button>WINDOW-1 CLOSE</button> <br>
+			<button>WINDOW-2 OPEN</button>
+			<button>WINDOW-2 CLOSE</button>
+		</div><br>
+	</div>
+
+
+	<script>
+		var coll = document.getElementsByClassName("collapse");
+		var i;
+		for (i = 0; i < coll.length; i++) {
+		  coll[i].addEventListener("click", function() {
+		    this.classList.toggle("active");
+		    var content = this.nextElementSibling;
+		    if (content.style.display === "block") {
+		      content.style.display = "none";
+		    } else {
+		      content.style.display = "block";
+		    }
+		  });
+		}
+	</script>
+
+</body>
+</html>
